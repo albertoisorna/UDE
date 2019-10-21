@@ -2,7 +2,7 @@ classes= 80
 train  = /darknet/data/coco/trainvalno5k.txt
 valid  = /darknet/data/coco/5k.txt
 #valid = data/coco_val_5k.list
-names = data/coco.names
+names = /darknet/data/coco.names
 backup = /darknet/data/coco/backup/
 eval=coco
 
