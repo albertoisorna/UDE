@@ -26,10 +26,10 @@ def main(_argv):
     yolo = YoloV3(classes=FLAGS.num_classes)
 
     yolo.load_weights(FLAGS.weights)
-    #logging.info('weights loaded')
+    logging.info('weights loaded')
 
     class_names = [c.strip() for c in open(FLAGS.classes).readlines()]
-    #logging.info('classes loaded')
+    logging.info('classes loaded')
 
     img = tf.image.decode_image(open(FLAGS.image, 'rb').read(), channels=3)
     img = tf.expand_dims(img, 0)
@@ -38,7 +38,7 @@ def main(_argv):
     #t1 = time.time()
     boxes, scores, classes, nums = yolo(img)
     #t2 = time.time()
-    #logging.info('time: {}'.format(t2 - t1))
+    logging.info('')
 
     logging.info('detections:')
     for i in range(nums[0]):
@@ -46,11 +46,13 @@ def main(_argv):
                                            np.array(scores[0][i]),
                                            np.array(boxes[0][i])))
 
-    #img = cv2.imread(FLAGS.image)
+    img = cv2.imread(FLAGS.image)
+    height, width, channels = img.shape
+    
     #img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
     #cv2.imwrite(FLAGS.output, img)
     #logging.info('output saved to: {}'.format(FLAGS.output))
-    
+    logging.info('height,width = [{},  {}]'.format(height, width))
 
 if __name__ == '__main__':
     try:
