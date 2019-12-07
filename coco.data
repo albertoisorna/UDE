@@ -1,8 +1,9 @@
+# el pwd debe ser content/darknet
 classes= 80
-train  = /darknet/data/coco/trainvalno5k.txt
-valid  = /darknet/data/coco/5k.txt
+train  = /content/darknet/data/coco/trainvalno5k.txt
+valid  = /content/darknet/data/coco/5k.txt
 #valid = data/coco_val_5k.list
-names = /darknet/data/coco.names
-backup = /darknet/data/coco/backup/
+names = data/coco.names
+backup = /coco/backup/
 eval=coco
 
