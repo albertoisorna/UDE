@@ -49,8 +49,8 @@ def main(_argv):
     img = cv2.imread(FLAGS.image)
     height, width, channels = img.shape
     
-    #img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
-    #cv2.imwrite(FLAGS.output, img)
+    img = draw_outputs(img, (boxes, scores, classes, nums), class_names)
+    cv2.imwrite(FLAGS.output, img)
     #logging.info('output saved to: {}'.format(FLAGS.output))
     logging.info('height,width = [ {} ,  {} ]'.format(height, width))
 
